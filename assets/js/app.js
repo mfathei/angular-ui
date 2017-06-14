@@ -1,6 +1,6 @@
 'use strict';
 
-var myApp = angular.module('MyApp', ['ngSanitize']);
+var myApp = angular.module('MyApp', ['ngSanitize', 'ui.mask']);
 
 myApp.controller('MainController', function ($scope) {
     $scope.msg = 'Hello Angular UI';
@@ -30,4 +30,54 @@ myApp.filter('highlight', function () {
             return text;
         }
     };
+});
+
+
+myApp.controller('MaskController', function ($scope) {
+    $scope.mask1 = '9999 9999 9999 9999';
+    $scope.mask2 = '(999) 999-999';
+    $scope.mask3 = 'A9A9***A9A9';
+    $scope.timemask = '19:29 PM';
+
+});
+
+myApp.config(['uiMask.ConfigProvider', function (uiMaskConfigProvider) {
+    uiMaskConfigProvider.maskDefinitions({'1': /^[0-1]/, '2': /[0-5]/, 'P': /[aA|pP]/, 'M': /[mM]/});
+}]);
+
+// ------------------------------
+
+var app = angular.module('app', ['ui.router']);
+
+app.config(function ($stateProvider) {
+
+
+    var helloState = {
+        name: 'hello',
+        url: '/hello',
+        template: "<h3>Hello World!<h3>"
+    };
+
+    var aboutState = {
+        name: 'about',
+        url: '/about',
+        template: "<h3>This is the Angular-UI Hello World app!</h3>"
+    };
+
+    var pageState = {
+        name: 'page',
+        url: '/page/{item}',
+        template: "<h3>page number {{ page }}</h3>",
+        controller: 'RouteController'
+    };
+
+    $stateProvider.state(helloState);
+    $stateProvider.state(pageState);
+    $stateProvider.state(aboutState);
+
+    // $locationProvider.html5Mode(true);
+});
+
+app.controller('RouteController', function ($scope, $transition$) {
+    $scope.page = $transition$.params().item;
 });

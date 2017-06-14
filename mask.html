@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular UI</title>
+</head>
+<body ng-app="MyApp">
+
+<div ng-controller="MaskController">
+
+
+    <p><input type="text" ng-model="phone" ui-mask="{{mask1}}"/></p>
+    <p>{{ phone }}</p>
+
+    <p><input type="text" ng-model="phone2" ui-mask="{{mask2}}"/></p>
+    <p>{{ phone2 }}</p>
+
+    <p><input type="text" ng-model="phone3" ui-mask="{{mask3}}"/></p>
+    <p>{{ phone3 }}</p>
+
+    <p><input type="text" ng-model="time" ui-mask="{{timemask}}" ui-mask-placeholder/></p>
+    <p>{{ time }}</p>
+
+</div>
+
+<!--jQuery InputMask-->
+<!--<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>-->
+<!--<script src="assets/inputmask/dist/min/inputmask/inputmask.min.js"></script>-->
+<!--<script src="assets/inputmask/dist/min/inputmask/inputmask.extensions.min.js"></script>-->
+<!--<script src="assets/inputmask/dist/min/inputmask/inputmask.numeric.extensions.min.js"></script>-->
+<!--<script src="assets/inputmask/dist/min/inputmask/inputmask.date.extensions.min.js"></script>-->
+
+
+<!--js-->
+<script src="assets/bower_components/angular/angular.min.js"></script>
+<script src="assets/bower_components/angular-ui/build/angular-ui.min.js"></script>
+<script src="assets/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+
+<script type="text/javascript" src="assets/bower_components/angular-ui-mask/dist/mask.min.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+
+</body>
+</html>
