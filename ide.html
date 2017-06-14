@@ -5,22 +5,37 @@
     <title>Angular UI</title>
     <link rel="stylesheet" href="assets/bower_components/codemirror/lib/codemirror.css">
     <link rel="stylesheet" href="assets/bower_components/codemirror/theme/solarized.css">
+    <style type="text/css">
+
+        .ace_editor {
+            height: 400px;
+        }
+
+    </style>
 </head>
 <body ng-app="ideApp">
 
 <div ng-controller="IdeController">
 
 
-<div ui-codemirror="cmOpts"></div>
+    <div ui-codemirror="cmOpts"></div>
+
+
+    <div ui-ace="aceOpts"></div>
 
 </div>
 
 <!--js-->
 <script type="text/javascript" src="assets/bower_components/angular/angular.min.js"></script>
 <script type="text/javascript" src="assets/bower_components/angular-ui/build/angular-ui.min.js"></script>
+<!--codemirror-->
 <script type="text/javascript" src="assets/bower_components/codemirror/lib/codemirror.js"></script>
 <script type="text/javascript" src="assets/bower_components/angular-ui-codemirror/ui-codemirror.min.js"></script>
 <script type="text/javascript" src="assets/bower_components/codemirror/mode/javascript/javascript.js"></script>
+<!--ace-->
+<script type="text/javascript" src="assets/bower_components/ace-builds/src-min-noconflict/ace.js"></script>
+<script type="text/javascript" src="assets/bower_components/angular-ui-ace/ui-ace.min.js"></script>
+
 <script type="text/javascript" src="assets/js/app.js"></script>
 
 </body>

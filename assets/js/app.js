@@ -92,7 +92,7 @@ vapp.controller('ValidateController', function ($scope) {
 
 // ---------------------------------
 
-var ideApp = angular.module('ideApp', ['ui.codemirror']);
+var ideApp = angular.module('ideApp', ['ui.codemirror', 'ui.ace']);
 
 ideApp.controller('IdeController', function ($scope) {
     $scope.cmOpts = {
@@ -101,5 +101,10 @@ ideApp.controller('IdeController', function ($scope) {
         tabSize: 4,
         theme: 'solarized',
         mode: 'javascript'
+    };
+
+    $scope.aceOpts = {
+        theme: 'twilight',
+        mode: 'html'
     };
 });
