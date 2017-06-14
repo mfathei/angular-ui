@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular UI</title>
+    <style type="text/css">
+        input.ng-invalid.ng-dirty {
+            border: 3px solid blue;
+        }
+    </style>
+</head>
+<body ng-app="vapp">
+
+<div ng-controller="ValidateController">
+
+
+    <form name="myForm">
+        <p><input name="password" ng-model="password" required></p>
+
+        <p><input name="confirm_password" ng-model="confirm_password"
+                  required
+                  ui-validate='"$value === password"'
+                  ui-validate-watch='"password"'
+        ></p>
+
+        <p>
+            <button ng-disabled="!myForm.$valid" class="btn btn-primary">Submit</button>
+        </p>
+
+    </form>
+
+
+</div>
+
+<!--js-->
+<script type="text/javascript" src="assets/bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="assets/bower_components/angular-ui/build/angular-ui.min.js"></script>
+<script type="text/javascript" src="assets/bower_components/angular-ui-validate/dist/validate.min.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+
+</body>
+</html>

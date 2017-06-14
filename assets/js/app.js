@@ -81,3 +81,11 @@ app.config(function ($stateProvider) {
 app.controller('RouteController', function ($scope, $transition$) {
     $scope.page = $transition$.params().item;
 });
+
+// --------------------------------
+
+var vapp = angular.module('vapp', ['ui.validate']);
+
+vapp.controller('ValidateController', function ($scope) {
+    $scope.page;
+});
