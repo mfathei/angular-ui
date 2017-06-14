@@ -89,3 +89,17 @@ var vapp = angular.module('vapp', ['ui.validate']);
 vapp.controller('ValidateController', function ($scope) {
     $scope.page;
 });
+
+// ---------------------------------
+
+var ideApp = angular.module('ideApp', ['ui.codemirror']);
+
+ideApp.controller('IdeController', function ($scope) {
+    $scope.cmOpts = {
+        lineNumbers: true,
+        indentSize: 4,
+        tabSize: 4,
+        theme: 'solarized',
+        mode: 'javascript'
+    };
+});
